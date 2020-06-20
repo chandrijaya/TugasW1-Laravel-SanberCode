@@ -1,0 +1,129 @@
+/*Chandra Aldiwijaya*/
+/*chandra.aldiwijaya.694@gmail.com*/
+
+
+body {
+    background-image: url("pattern.jpg");
+    margin: 0;
+    font-family: arial, verdana, sans-serif;;
+}
+
+header {
+    overflow: hidden;
+    background-color: rgb(224, 250, 255);
+    position: fixed;
+    width: 100vw;
+}
+
+header img {
+    float: left;
+    display: block;
+    width: auto;
+    height: 75px;
+}
+
+header ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+
+}
+
+header a {
+    display: inline-block;
+    color: rgb(69, 151, 245);
+    text-align: center;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    width: calc(100vw - 800px);
+    min-width: 75px;
+    max-width: 150px;
+    text-decoration: none;
+    font-size: 17px;
+    list-style: none;
+}
+
+header a:hover {
+    background-color:rgb(69, 151, 245);
+    color: white;
+}
+
+
+section {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 75px 30px 30px 30px;
+    background-color: white ;
+    max-width: 90vw;
+    
+}
+
+section h1 {
+    text-align: center;
+    font-size: 38px;
+}
+
+section a {
+    display: block;
+    color: rgb(69, 151, 245);
+    text-decoration: none;
+    font-size: 27px;
+}
+
+section p{
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(69, 151, 245);
+    text-indent: 35px;
+    text-align: justify;
+    font-size: 17px;
+}
+
+footer {
+    background-color: black;
+}
+
+footer h5 {
+    margin: 0;
+    text-align: center;
+    font-size: 17px;
+    color: white;
+    padding: 10px;
+}
+
+/*For responsive user at 600px width. Navbar menu will stack horizontal*/
+/*Checkout your viewport at https://whatismyviewport.com/*/
+@media screen and (max-width: 600px) {
+    header ul {
+        float: left; 
+        margin: 0;
+    }
+    
+    header a{
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 100vw;
+        min-width: 100vw;
+        font-size: 15px;
+    }
+    
+    section {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 172px
+    }
+
+    section h1 {
+        font-size: 33px;
+    }
+    
+    section a {
+        font-size: 22px;
+    }
+    
+    section p{
+        text-indent: 30px;
+        font-size: 15px;
+        
+    }
+
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conditional HTML</title>
+    <link href="../public/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+            <img class="navbar-brand" href="../index.html" id="logo" src="../public/img/logo.png" width="200px" />
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/string.html">String</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/function.html">Function</a>
+                    </li>
+                    
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../public/conditional.html">Conditional <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/looping.html">Looping</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/array.html">Array</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+    <h1>Berlatih Kondisional</h1>
+    
+    <h3>Masukkan nama dan peranmu!</h3>
+    <form action="#" id="formConditional">
+        <input type="text" id="name" placeholder="Isi nama di sini">
+        <input type="text" id="role" placeholder="Isi peran di sini">
+        <input type="submit" value="Mulai Permainan">
+    </form>
+
+    <h3>Jawaban dari console game: </h3>
+    <div id="jawaban">
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+    <footer>
+        <h5>Tugas Hari 4 Laravel : chandra.aldiwijaya@gmail.com</h5>
+    </footer>
+</body>
+
+<script>
+
+    var form = document.getElementById("formConditional")
+    var jawaban = document.getElementById("jawaban")
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault()
+
+        /* 
+            ATURAN PERMAINAN 
+            // Output untuk Input nama = '' dan peran = ''
+            // => "Nama harus diisi!"
+    
+            //Output untuk Input nama = 'Mikael' dan peran = ''
+            // => "Halo Mikael, Pilih peranmu untuk memulai game!"
+    
+            //Output untuk Input nama = 'Nina' dan peran 'Penyihir'
+            // => "Selamat datang di Dunia Werewolf, Nina"
+            // => "Halo Penyihir Nina, kamu dapat melihat siapa yang menjadi Werewolf!"
+    
+            //Output untuk Input nama = 'Danu' dan peran 'Werewolf'
+            // => "Selamat datang di Dunia Werewolf, Danu"
+            // "Halo Werewolf Danu, kamu dapat memilih siapa untuk dimakan malam ini!"
+    
+            //Output untuk Input nama = 'Zero' dan peran 'Rakjel'
+            // => "Selamat datang di Dunia Werewolf, Zero"
+            // => "Halo Rakjel Zero, Kamu menjadi rakyat jelata "
+    
+            PETUNJUK MENGERJAKAN
+            1. Buat Kondisional agar output dari konsol sesuai yang diharapkan
+            2. masukkan lah jawaban dari kondisi yang diberikan oleh User ke dalam variabel jawabanKonsol
+        */
+
+        // Tuliskan Code kamu di sini
+        var name = document.getElementById("name").value;
+        var role = document.getElementById("role").value;      
+        // buatlah kondisional berdasarkan dua variabel di atas yaitu name dan role, ketentuannya dapat dibaca di atas
+        var temprole = role.toLowerCase(); //Jaga2 kalau ada yang input pakai huruf besar dan kecil
+        var allrole = ["penyihir", "werewolf", "rakjel"];
+        
+        if (name != ""){
+            if (allrole.indexOf(temprole) != -1){
+                var tempanswer = "Selamat datang di Dunia Werewolf, " + name + ". ";
+                switch (temprole){
+                    case "penyihir":
+                        var tempanswer = tempanswer + "<br>" + "Halo Penyihir " + name + ",  kamu dapat melihat siapa yang menjadi Werewolf!"
+                        break;
+
+                    case "werewolf":
+                        var tempanswer = tempanswer + "<br>" + "Halo Werewolf " + name +  ",  kamu dapat memilih siapa untuk dimakan malam ini!"
+                        break;
+
+                    default:
+                        var tempanswer = tempanswer + "<br>" + "Halo Rakjel " + name + ",  kamu menjadi rakyat jelata"
+                        break;
+                }
+            }
+            else{
+                var tempanswer = "Halo " + name + ",  kamu tidak mengisi atau salah menginput peranmu.";
+                var tempanswer = tempanswer + "<br>" + "Halo " + name + ",  pilih diantara 3 peran: penyihir, werewolf, rakjel"
+            }
+        }
+        else{
+            var tempanswer = "Nama harus diisi!";
+        }
+
+        var jawabanKonsol = tempanswer;// = jawaban dari kondisional di-assign di sini
+        // Code Sampai sini
+
+        jawaban.innerHTML = jawabanKonsol;
+    })
+        
+
+</script>
+</html>
